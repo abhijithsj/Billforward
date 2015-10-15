@@ -1,0 +1,33 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-platform
+alanning:roles
+mizzao:bootstrap-3
+underscore
+iron:router
+sacha:spin
+ian:accounts-ui-bootstrap-3
+accounts-password
+fortawesome:fontawesome
+wisptools:interaction
+wisptools:customer
+wisptools:tower
+meteorhacks:fast-render
+dburles:google-maps
+meteorhacks:kadira
+zimme:bootstrap-growl
+wisptools:menu
+wisptools:powercode-commission
+wisptools:powercode-extenet
+wisptools:powercode-tax-report
+mrt:jquery-mousewheel
+wisptools:ap
+wisptools:roles
+meteorhacks:npm
+
+
+npm-container
