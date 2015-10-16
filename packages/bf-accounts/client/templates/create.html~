@@ -1,5 +1,0 @@
-<template name="wtCreate">
-  <div class="wt-create-title">
-    <h4>Create Account</h4>
-  </div>
-</template>
