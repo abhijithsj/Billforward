@@ -27,10 +27,9 @@ Package.onTest(function(api) {
     'tinytest',
     'rajit:bootstrap3-datepicker@1.4.1',
     'numeral:numeral@1.5.3',
-    'percolate:synced-cron@1.2.1',
-    'wisptools:billforward'
+    'percolate:synced-cron@1.2.1'
   ]);
-    
+
   api.addFiles('billforward-tests.js');
 });
 
