@@ -34,7 +34,7 @@ Package.onUse(function(api) {
     
 //api.addFiles('bf-accounts.js');
 	
-	 //api.export('WtAccount');
+	 //api.export('WtAccounts');
 	 
 });
 

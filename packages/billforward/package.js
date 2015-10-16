@@ -13,11 +13,24 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.1.0.2');
   api.addFiles('billforward.js');
+
+  api.export('WtBillForward');
 });
 
 Package.onTest(function(api) {
-  api.use('tinytest');
-  api.use('wisptools:billforward');
+    api.use([
+    'meteor',
+    'mongo',
+    'templating',
+    'reactive-var',
+    'iron:router@1.0.7',
+    'tinytest',
+    'rajit:bootstrap3-datepicker@1.4.1',
+    'numeral:numeral@1.5.3',
+    'percolate:synced-cron@1.2.1',
+    'wisptools:billforward'
+  ]);
+    
   api.addFiles('billforward-tests.js');
 });
 
