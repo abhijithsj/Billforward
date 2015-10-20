@@ -21,11 +21,13 @@ Package.onUse(function(api) {
     'tinytest',
     'rajit:bootstrap3-datepicker@1.4.1',
     'numeral:numeral@1.5.3',
-    'percolate:synced-cron@1.2.1'
+    'percolate:synced-cron@1.2.1',
+    'wisptools:billforward-ui',
+    'wisptools:billforward-api'
   ]);
   api.addFiles('billforward.js');
 
-  api.export('WtBillForward');
+ // api.export('WtBillForward');
 });
 
 Package.onTest(function(api) {
@@ -33,9 +35,4 @@ api.use('tinytest');
   api.use('wisptools:billforward');
   api.addFiles('billforward-tests.js');
 
-});
-
-
-Npm.depends({
-  'billforward': '1.0.1'
 });

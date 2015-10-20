@@ -19,7 +19,7 @@ Session.set('mdAddressDisplayAdd2', false);
 Session.set('mdAddressDisplayAdd3', false);
 });
 
-Template.wtCreateAccount.events({
+Template.wtCreateBfAccount.events({
 
 'submit form': function (event) {
 	var firstName = document.querySelectorAll("[name='firstName").value;

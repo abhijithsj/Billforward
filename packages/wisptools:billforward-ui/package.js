@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'wisptools:bf-accounts',
+  name: 'wisptools:billforward-ui',
   version: '0.0.1',
   // Brief, one-line summary of the package.
   summary: '',
@@ -19,27 +19,27 @@ Package.onUse(function(api) {
     'aldeed:collection2@2.3.1',
     'aldeed:autoform@4.2.2',
     'iron:router@1.0.7',
-    'wisptools:billforward'
+    'wisptools:billforward-api'
   ]);
 // Client and Server files
   api.addFiles([
     'lib/router.js',
-    'bf-accounts.js'
+    'billforward-ui.js'
     ], ['server','client']);
     
 // Client only files
   api.addFiles([
-    'client/templates/create.html',
-    'client/templates/create.js'
+    'client/templates/create-account.html',
+    'client/templates/create-account.js'
     ], 'client');
     
 	
-	 //api.export('WtAccount');
+	 //api.export('WtBillForwardUI');
 	 
 });
 
 Package.onTest(function(api) {
   api.use('tinytest');
-  api.use('wisptools:bf-accounts');
-  api.addFiles('bf-accounts-tests.js');
+  api.use('wisptools:billforward-ui');
+  api.addFiles('billforward-ui-tests.js');
 });

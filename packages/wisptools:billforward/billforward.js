@@ -1,10 +1,10 @@
 // Write your package code here!
-WtBillForward = {};
+// WtBillForward = {};
 
 // Add the database connection
 if (Meteor.isServer) {
   
-  WtBillForward = Npm.require('billforward');
+//  WtBillForward = Npm.require('billforward');
 
   config = {
 							  urlRoot:     Meteor.settings.billforward.urlRoot,
@@ -13,7 +13,7 @@ if (Meteor.isServer) {
 							  "responseLogging": false,
 							  "errorLogging": true
 						  };
-  WtBillForward.Client.makeDefault(config);
+//  WtBillForward.Client.makeDefault(config);
  // console.log(WtBillForward);
 }
 

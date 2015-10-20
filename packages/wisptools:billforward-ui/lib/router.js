@@ -1,6 +1,6 @@
-Router.route('/create', {
+Router.route('/bf/account/create', {
   name: 'create',
-  template: 'wtCreateAccount'
+  template: 'wtCreateBfAccount'
   
 });
 
