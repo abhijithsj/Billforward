@@ -12,6 +12,17 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.1.0.2');
+   api.use([
+    'meteor',
+    'mongo',
+    'templating',
+    'reactive-var',
+    'iron:router@1.0.7',
+    'tinytest',
+    'http',
+    'rajit:bootstrap3-datepicker@1.4.1',
+    'numeral:numeral@1.5.3'
+  ]);
   api.addFiles('lib/billforward-api.js');
     api.export('WtBillForwardAPI');
 });

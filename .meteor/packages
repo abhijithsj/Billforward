@@ -27,7 +27,4 @@ wisptools:powercode-tax-report
 mrt:jquery-mousewheel
 wisptools:ap
 wisptools:roles
-wisptools:billforward-ui
-wisptools:billforward-api
 wisptools:billforward
-http

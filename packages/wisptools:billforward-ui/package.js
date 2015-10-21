@@ -21,6 +21,7 @@ Package.onUse(function(api) {
     'iron:router@1.0.7',
     'wisptools:billforward-api'
   ]);
+  api.use(['templating'], 'client');
 // Client and Server files
   api.addFiles([
     'lib/router.js',
@@ -29,12 +30,14 @@ Package.onUse(function(api) {
     
 // Client only files
   api.addFiles([
+    'client/templates/components/address.html',
     'client/templates/create-account.html',
-    'client/templates/create-account.js'
+    'client/templates/create-account.js',
+    'client/templates/components/address.js'
     ], 'client');
     
 	
-	 //api.export('WtBillForwardUI');
+	// api.export('WtBillForwardUI');
 	 
 });
 
