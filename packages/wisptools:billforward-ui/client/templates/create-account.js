@@ -22,7 +22,7 @@ Template.wtCreateBfAccount.events({
 	
 	var new_account ={
 		"profile": 
-		{
+		  {
 			"email": email,
 			"firstName"	: firstName,
 			"lastName"	: lastName,
@@ -40,8 +40,7 @@ Template.wtCreateBfAccount.events({
 				"postcode": "",
 				"landline": "",
 				"primaryAddress": true
-			  }
-			],
+			  }],
 			"companyName": companyName,
 			"vatNumber": taxNo,
 			"logoURL": "https://app-sandbox.billforward.net/resources/images/normal_logo.png",
@@ -58,9 +57,6 @@ Template.wtCreateBfAccount.events({
 		console.log(response);
 		//Session.set('BillForwardCreateAcountResponse', response);
 	});
-		
-	//WtBillForwardAPI.accounts.create(new_account);
-	//alert(firstName);
 	return false;
 	}
 });

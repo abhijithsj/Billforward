@@ -5,12 +5,4 @@ WtBillForwardAPI = {};
 // Add the database connection
 if (Meteor.isServer) {
 
-
-  
-
-
-//WtBillForwardAPI.accounts.create(new_account);
-//console.log(WtBillForwardAPI);
 }
-
-
