@@ -16,4 +16,11 @@ if (Meteor.isServer) {
 //  WtBillForward.Client.makeDefault(config);
  // console.log(WtBillForward);
 }
+Meteor.methods({
 
+"createBillForwardAcount": function(new_account){
+   console.log('Test 4');
+    var response = WtBillForwardAPI.accounts.create(new_account);
+    return response;
+  }
+});

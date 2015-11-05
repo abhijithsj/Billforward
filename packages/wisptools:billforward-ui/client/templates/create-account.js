@@ -9,8 +9,14 @@ Template.wtCreateBfAccount.events({
 	var email = document.querySelector("[name='email']").value;
 	var phone = document.querySelector("[name='phone']").value;
 	var address = document.querySelector("[name='address']").value;
-	var address2 = document.querySelector("[name='address2']").value;
-	var address3 = document.querySelector("[name='address3']").value;
+	if(document.querySelector("[name='address2']"))
+	{
+	  var address2 = document.querySelector("[name='address2']").value;
+	}
+  if(document.querySelector("[name='address3']"))
+  {
+    var address3 = document.querySelector("[name='address3']").value;
+  }
 	var companyName = document.querySelector("[name='companyName']").value;
 	var taxNo = document.querySelector("[name='taxNo']").value;
 	
@@ -43,9 +49,15 @@ Template.wtCreateBfAccount.events({
 			"additionalInformation": ""
   		}
 	};
-	Meteor.call('WtBillForwardAPI.accounts.create',function(new_account, response) {
-			alert(response);
-		})
+		
+  Meteor.call('createBillForwardAcount', new_account, function(err,response) {
+		if(err) {
+			console.log("Error:" + err.reason);
+			return;
+		}
+		console.log(response);
+		//Session.set('BillForwardCreateAcountResponse', response);
+	});
 		
 	//WtBillForwardAPI.accounts.create(new_account);
 	//alert(firstName);

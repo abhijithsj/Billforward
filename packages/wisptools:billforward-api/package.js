@@ -23,7 +23,11 @@ Package.onUse(function(api) {
     'rajit:bootstrap3-datepicker@1.4.1',
     'numeral:numeral@1.5.3'
   ]);
-  api.addFiles('lib/billforward-api.js');
+  api.addFiles([
+    'lib/billforward-api.js',
+    'server/accounts.js'
+    ],'server');
+  
     api.export('WtBillForwardAPI');
 });
 
