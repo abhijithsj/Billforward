@@ -13,9 +13,7 @@ if (Meteor.isServer) {
 							  "responseLogging": false,
 							  "errorLogging": true
 						  };
-//  WtBillForward.Client.makeDefault(config);
- // console.log(WtBillForward);
-}
+						  
 Meteor.methods({
 
 "createBillForwardAcount": function(new_account){
@@ -23,4 +21,9 @@ Meteor.methods({
     var response = WtBillForwardAPI.accounts.create(new_account);
     return response;
   }
-});
+});						  
+						  
+//  WtBillForward.Client.makeDefault(config);
+ // console.log(WtBillForward);
+}
+
