@@ -24,6 +24,7 @@ Package.onUse(function(api) {
     'numeral:numeral@1.5.3'
   ]);
   api.addFiles([
+    'server/api.js',
     'lib/billforward-api.js',
     'server/accounts.js'
     ],'server');

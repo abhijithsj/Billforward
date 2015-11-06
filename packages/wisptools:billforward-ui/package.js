@@ -19,6 +19,7 @@ Package.onUse(function(api) {
     'aldeed:collection2@2.3.1',
     'aldeed:autoform@4.2.2',
     'iron:router@1.0.7',
+    'wisptools:menu',
     'wisptools:billforward-api'
   ]);
   api.use(['templating'], 'client');
@@ -30,6 +31,7 @@ Package.onUse(function(api) {
     
 // Client only files
   api.addFiles([
+    'client/menu.js',
     'client/templates/components/address.html',
     'client/templates/create-account.html',
     'client/templates/create-account.js',

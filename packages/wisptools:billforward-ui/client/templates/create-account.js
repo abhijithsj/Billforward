@@ -55,7 +55,6 @@ Template.wtCreateBfAccount.events({
 			return;
 		}
 		console.log(response);
-		//Session.set('BillForwardCreateAcountResponse', response);
 	});
 	return false;
 	}
