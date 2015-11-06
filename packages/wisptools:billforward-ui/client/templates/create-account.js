@@ -54,7 +54,25 @@ Template.wtCreateBfAccount.events({
 			console.log("Error:" + err.reason);
 			return;
 		}
-		console.log(response);
+		if(response != 'failed')
+		{
+			$.growl({
+					icon: 'glyphicon glyphicon-ok',
+					message: 'Account Created successfully'
+				},{
+					type: 'success'
+				});
+		}
+		else
+		{
+			$.growl({
+					icon: 'glyphicon glyphicon-warning-sign',
+					message: 'Failed to create account. Please try again'
+				},{
+					type: 'danger'
+				});
+		}
+		console.log(response.data.results[0].profile);
 	});
 	return false;
 	}

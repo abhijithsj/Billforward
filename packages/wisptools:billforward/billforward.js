@@ -17,7 +17,15 @@ if (Meteor.isServer) {
   "createBillForwardAcount": function(new_account){
       //console.log('Test 4');
       var response = WtBillForwardAPI.accounts.create(new_account);
-      return response;
+      var account_details = response.data.results[0].profile;
+      var res = WtBillForwardAccounts.collection.accounts.insert({details:account_details});
+      if (res) {
+       return response;
+      } else {
+        return "failed";
+      }
+
+      
     }
   });						  
 

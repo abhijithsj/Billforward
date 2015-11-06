@@ -22,10 +22,15 @@ Package.onUse(function(api) {
     'rajit:bootstrap3-datepicker@1.4.1',
     'numeral:numeral@1.5.3',
     'percolate:synced-cron@1.2.1',
+    'zimme:bootstrap-growl@2.0.1',
+    'wisptools:collection',
     'wisptools:billforward-ui',
     'wisptools:billforward-api'
   ]);
-  api.addFiles('billforward.js');
+  api.addFiles([
+  'billforward.js',
+  'lib/collection.js'
+  ],['server','client']);
 
  // api.export('WtBillForward');
 });
