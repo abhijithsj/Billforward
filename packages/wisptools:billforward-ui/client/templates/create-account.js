@@ -56,6 +56,9 @@ Template.wtCreateBfAccount.events({
 		}
 		if(response != 'failed')
 		{
+		  console.log(response.data.results[0].profile);
+		  Router.go('/bf/account/view');
+		  Session.set('profileDetails', response.data.results[0].profile);
 			$.growl({
 					icon: 'glyphicon glyphicon-ok',
 					message: 'Account Created successfully'
@@ -72,7 +75,6 @@ Template.wtCreateBfAccount.events({
 					type: 'danger'
 				});
 		}
-		console.log(response.data.results[0].profile);
 	});
 	return false;
 	}

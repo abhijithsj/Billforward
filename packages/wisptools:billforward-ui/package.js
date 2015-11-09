@@ -34,13 +34,11 @@ Package.onUse(function(api) {
     'client/menu.js',
     'client/templates/components/address.html',
     'client/templates/create-account.html',
+    'client/templates/view-account.html',
+    'client/templates/view-account.js',
     'client/templates/create-account.js',
     'client/templates/components/address.js'
     ], 'client');
-    
-	
-	// api.export('WtBillForwardUI');
-	 
 });
 
 Package.onTest(function(api) {
