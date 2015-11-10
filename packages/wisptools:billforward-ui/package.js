@@ -37,6 +37,8 @@ Package.onUse(function(api) {
     'client/templates/view-account.html',
     'client/templates/view-account.js',
     'client/templates/create-account.js',
+    'client/templates/list-accounts.html',
+    'client/templates/list-accounts.js',
     'client/templates/components/address.js'
     ], 'client');
 });

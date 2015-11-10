@@ -8,7 +8,11 @@ Router.route('/bf/account/view', {
   template: 'wtViewBfAccount'
   
 });
-
+Router.route('/bf/account/accounts', {
+  name: 'accounts',
+  template: 'wtListBfAccounts'
+  
+});
 
 Router.onBeforeAction(function() {
   this.next();
