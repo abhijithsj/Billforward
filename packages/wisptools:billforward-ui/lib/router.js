@@ -13,6 +13,11 @@ Router.route('/bf/account/accounts', {
   template: 'wtListBfAccounts'
   
 });
+Router.route('/bf/account/edit', {
+  name: 'edit',
+  template: 'wtEditBfAccounts'
+  
+});
 
 Router.onBeforeAction(function() {
   this.next();

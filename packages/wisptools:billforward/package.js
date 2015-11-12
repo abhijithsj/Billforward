@@ -32,7 +32,7 @@ Package.onUse(function(api) {
   'lib/collection.js'
   ],['server','client']);
 
- // api.export('WtBillForward');
+  api.export('WtBillForwardAccounts');
 });
 
 Package.onTest(function(api) {
