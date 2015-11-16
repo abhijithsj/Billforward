@@ -25,9 +25,14 @@ if (Meteor.isServer) {
         return "failed";
       }
     },
-  "getBillForwardAcounts": function(new_account){
+  "getBillForwardAcounts": function(){
   
       var account_details = WtBillForwardAPI.accounts.getAll();
+      return account_details;
+    },
+  "getSingleBillForwardAcount": function(accountId){
+  
+      var account_details = WtBillForwardAPI.accounts.getSingleAccount(accountId);
       return account_details;
     }
   });						  

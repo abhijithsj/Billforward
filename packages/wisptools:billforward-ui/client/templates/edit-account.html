@@ -2,43 +2,42 @@
 	<div class="wt-create-title">
 		<h4>Edit Account</h4>
 		<div class="container">
-			{{accountDetails}}
 			<form class="form-horizontal">
 				<div class="form-group">
 					<label class="control-label col-sm-4" for="firstName">First Name:</label>
 					<div class="col-sm-4">
-						<input type="text" class="form-control" name="firstName" id="firstName" value="{{accountId}}" placeholder="Enter First Name">
+						<input type="text" class="form-control" name="firstName" id="firstName" value="{{firstName}}" placeholder="Enter First Name">
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="control-label col-sm-4" for="lastName">Last Name:</label>
 					<div class="col-sm-4">          
-						<input type="text" class="form-control" name="lastName" id="lastName" value="" placeholder="Enter Last Name">
+						<input type="text" class="form-control" name="lastName" id="lastName" value="{{lastName}}" placeholder="Enter Last Name">
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="control-label col-sm-4" for="email">Email:</label>
 					<div class="col-sm-4">
-						<input type="email" class="form-control" name="email" id="email" value="" placeholder="Enter Email Address">
+						<input type="email" class="form-control" name="email" id="email" value="{{email}}" placeholder="Enter Email Address">
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="control-label col-sm-4" for="phone">Phone:</label>
 					<div class="col-sm-4">          
-						<input type="text" class="form-control" name="phone" id="phone" value="" placeholder="Enter Phone Number">
+						<input type="text" class="form-control" name="phone" id="phone" value="{{mobile}}" placeholder="Enter Phone Number">
 					</div>
 				</div>
 				{{> wtBillForwardAddress}}
 				<div class="form-group">
 					<label class="control-label col-sm-4" for="pwd">Company Name:</label>
 					<div class="col-sm-4">          
-						<input type="text" class="form-control" name="companyName" id="companyName" value="" placeholder="Enter Company Name">
+						<input type="text" class="form-control" name="companyName" id="companyName" value="{{companyName}}" placeholder="Enter Company Name">
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="control-label col-sm-4" for="pwd">Tax Number:</label>
 					<div class="col-sm-4">          
-						<input type="text" class="form-control" name="taxNo" id="taxNo" value="" placeholder="Enter Tax Number">
+						<input type="text" class="form-control" name="taxNo" id="taxNo" value="{{vatNumber}}" placeholder="Enter Tax Number">
 					</div>
 				</div>
 				<div class="form-group">

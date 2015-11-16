@@ -44,6 +44,23 @@ WtBillForwardAPI.accounts = {
             });
     return myFuture.wait();
   },
+  getSingleAccount:function(accountId){
+    var myFuture = new Future();
+    Meteor.http.call("GET",WtBillForwardAPI.config.urlRoot+"/"+accountId, { headers: {"Authorization" : "Bearer "+WtBillForwardAPI.config.accessToken}}, 
+            function(error,result)
+            {
+              if(error){console.log(error);}
+              //console.log(result);
+              //console.log(result.statusCode);
+              if(result.statusCode == 200)
+              {
+                //console.log(result);
+                myFuture.return(result);
+              }
+            });
+    return myFuture.wait();
+  },
+  
   update:function(){console.log("update");}
 }
 

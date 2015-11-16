@@ -28,6 +28,7 @@ if (Meteor.isClient){
 			var selectedAccount = event.target.value;
 			//alert(selectedAccount);
 			Session.set('selectedAccount', selectedAccount);
+			Session.set('proileData',"");
 			Router.go('/bf/account/edit');
 		}
 	});
