@@ -1,6 +1,10 @@
 <template name="wtEditBfAccounts">
 	<div class="wt-create-title">
 		<h4>Edit Account</h4>
+		{{log accountId}}
+		{{accountData accountId}}
+		{{log accountData}}
+		{{#if accountData}}
 		<div class="container">
 			<form class="form-horizontal">
 				<div class="form-group">
@@ -47,5 +51,8 @@
 				</div>
 			</form>
 		</div>
+		{{else}}
+		Loading...
+  	{{/if}}
 	</div>
 </template>

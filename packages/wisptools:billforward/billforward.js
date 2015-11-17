@@ -30,10 +30,20 @@ if (Meteor.isServer) {
       var account_details = WtBillForwardAPI.accounts.getAll();
       return account_details;
     },
-  "getSingleBillForwardAcount": function(accountId){
+  "getSingleBillForwardAcount1": function(accountId){
   
       var account_details = WtBillForwardAPI.accounts.getSingleAccount(accountId);
       return account_details;
+    },
+  "getSingleBillForwardAcount": function(accountId){
+      accountId =String(accountId);
+      console.log(accountId);
+      console.log(typeof(accountId));
+      console.log("test");
+      var single_account_details = WtBillForwardAccounts.collection.accounts.findOne({'details.accountID':accountId});
+      console.log(single_account_details);
+      return single_account_details;
+
     }
   });						  
 

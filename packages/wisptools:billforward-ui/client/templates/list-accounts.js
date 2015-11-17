@@ -25,10 +25,13 @@ if (Meteor.isClient){
 
 	Template.wtListBfAccounts.events({
 		'click .edit_button': function(event){
+
 			var selectedAccount = event.target.value;
-			//alert(selectedAccount);
+			alert(selectedAccount);
 			Session.set('selectedAccount', selectedAccount);
-			Session.set('proileData',"");
+			delete Session.keys['proileData'];
+			//console.log(Session.get("selectedAccount"));
+			//Session.set('proileData',"");
 			Router.go('/bf/account/edit');
 		}
 	});
