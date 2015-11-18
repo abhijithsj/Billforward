@@ -4,7 +4,7 @@
 		{{log accountId}}
 		{{accountData accountId}}
 		{{log accountData}}
-		{{#if accountData}}
+		{{#if displayForm}}
 		<div class="container">
 			<form class="form-horizontal">
 				<div class="form-group">
@@ -46,6 +46,7 @@
 				</div>
 				<div class="form-group">
 					<div class="col-sm-offset-4 col-sm-4">
+						<input type="hidden" name="accountId" id="accountId" value="{{accountId}}">
 						<button type="submit" class="btn btn-default">Submit</button>
 					</div>
 				</div>
@@ -53,6 +54,7 @@
 		</div>
 		{{else}}
 		Loading...
+		<!--<img src="/templates/img/loading.gif"> -->
   	{{/if}}
 	</div>
 </template>

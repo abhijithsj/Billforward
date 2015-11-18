@@ -61,7 +61,29 @@ WtBillForwardAPI.accounts = {
     return myFuture.wait();
   },
   
-  update:function(){console.log("update");}
+  update:function(new_account, id){
+    //console.log(new_account);
+    console.log(id);
+    var myFuture = new Future();
+    Meteor.http.call("PUT",WtBillForwardAPI.config.urlRoot, { headers: {"Authorization" : "Bearer "+WtBillForwardAPI.config.accessToken, "Content-Type": "application/json"},
+      data: { "@type": "account",
+              "id": id,
+              "profile": new_account
+            }}, 
+            function(error,result)
+            {
+              if(error){console.log(error);}
+              //console.log(result);
+              console.log(result.statusCode);
+              if(result.statusCode == 200)
+              {
+                // Users.insert(new_account);
+                //console.log(result);
+                myFuture.return(result);
+              }
+            });
+    return myFuture.wait();
+  }
 }
 
 WtBillForwardAPI.accounts.getAll();

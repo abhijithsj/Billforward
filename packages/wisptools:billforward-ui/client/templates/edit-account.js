@@ -36,6 +36,9 @@ if (Meteor.isClient){
 
 			});
 		},
+		displayForm: function(){
+			return Session.get("proileData");
+		},
 	  firstName:function(){
 	  	if(Session.get('proileData'))
 	  	{
@@ -71,24 +74,86 @@ if (Meteor.isClient){
 	  	{
 	  		return Session.get('proileData').vatNumber;
 	  	} 
-	  },
-	  address1:function(){
-	  	if(Session.get('proileData'))
-	  	{
-	  		return Session.get('proileData').addresses[0].addressLine1;
-	  	} 
-	  },
-	  address2:function(){
-	  	if(Session.get('proileData'))
-	  	{
-	  		return Session.get('proileData').addresses[0].addressLine2;
-	  	} 
-	  },
-	  address3:function(){
-	  	if(Session.get('proileData'))
-	  	{
-	  		return Session.get('proileData').addresses[0].addressLine3;
-	  	} 
 	  }
+	});
+
+	Template.wtEditBfAccounts.events({
+		
+		'submit form': function (event) {
+			event.preventDefault();
+			//alert("submit clicked");
+			var id = document.querySelector("[name='accountId']").value;
+			var firstName = document.querySelector("[name='firstName']").value;
+			var lastName = document.querySelector("[name='lastName']").value;
+			var email = document.querySelector("[name='email']").value;
+			var phone = document.querySelector("[name='phone']").value;
+			var address = document.querySelector("[name='address']").value;
+			if(document.querySelector("[name='address2']"))
+			{
+			  var address2 = document.querySelector("[name='address2']").value;
+			}
+		  if(document.querySelector("[name='address3']"))
+		  {
+		    var address3 = document.querySelector("[name='address3']").value;
+		  }
+			var companyName = document.querySelector("[name='companyName']").value;
+			var taxNo = document.querySelector("[name='taxNo']").value;
+			
+			var new_account ={
+
+					"email": email,
+					"firstName"	: firstName,
+					"lastName"	: lastName,
+					"landline"	: "",
+					"mobile"	: phone,
+					"dob"		: "",
+					"addresses"	: [
+					  {
+						"addressLine1": address,
+						"addressLine2": address2,
+						"addressLine3": address3,
+						"city": "",
+						"province": "",
+						"country": "",
+						"postcode": "",
+						"landline": "",
+						"primaryAddress": true
+					  }],
+					"companyName": companyName,
+					"vatNumber": taxNo,
+					"logoURL": "https://app-sandbox.billforward.net/resources/images/normal_logo.png",
+					"deleted": false,
+					"additionalInformation": ""
+			};
+				
+		  Meteor.call('updateBillForwardAcount', new_account, id, function(err,response) {
+				if(err) {
+					console.log("Error:" + err.reason);
+					return;
+				}
+				if(response != 'failed')
+				{
+				  console.log(response);
+				  Router.go('/bf/account/accounts');
+				  //Session.set('profileDetails', response.data.results[0].profile);
+					$.growl({
+							icon: 'glyphicon glyphicon-ok',
+							message: 'Account Updated successfully'
+						},{
+							type: 'success'
+						});
+				}
+				else
+				{
+					$.growl({
+							icon: 'glyphicon glyphicon-warning-sign',
+							message: 'Failed to update account. Please try again'
+						},{
+							type: 'danger'
+						});
+				}
+			});
+			return false;
+		}
 	});
 }

@@ -42,7 +42,7 @@ Package.onUse(function(api) {
     'client/templates/list-accounts.html',
     'client/templates/list-accounts.js',
     'client/templates/components/address.js',
-    'client/templates/edit-account.js'
+    'client/templates/edit-account.js'    
     ], 'client');
 });
 

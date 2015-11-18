@@ -25,6 +25,13 @@ if (Meteor.isServer) {
         return "failed";
       }
     },
+  "updateBillForwardAcount": function(new_account, id){
+      console.log('Test 5');
+      console.log(id);
+      var response = WtBillForwardAPI.accounts.update(new_account,id);
+      //var account_details = response.data.results[0].profile;
+      //var res = WtBillForwardAccounts.collection.accounts.insert({details:account_details});
+    },
   "getBillForwardAcounts": function(){
   
       var account_details = WtBillForwardAPI.accounts.getAll();

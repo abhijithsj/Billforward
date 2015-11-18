@@ -27,7 +27,7 @@ if (Meteor.isClient){
 		'click .edit_button': function(event){
 
 			var selectedAccount = event.target.value;
-			alert(selectedAccount);
+			//alert(selectedAccount);
 			Session.set('selectedAccount', selectedAccount);
 			delete Session.keys['proileData'];
 			//console.log(Session.get("selectedAccount"));
