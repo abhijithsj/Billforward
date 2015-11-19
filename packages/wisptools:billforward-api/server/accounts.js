@@ -30,7 +30,7 @@ WtBillForwardAPI.accounts = {
   },
   getAll:function(){
     var myFuture = new Future();
-    Meteor.http.call("GET",WtBillForwardAPI.config.urlRoot, { headers: {"Authorization" : "Bearer "+WtBillForwardAPI.config.accessToken}}, 
+    Meteor.http.call("GET",WtBillForwardAPI.config.urlRoot+"?&records=100", { headers: {"Authorization" : "Bearer "+WtBillForwardAPI.config.accessToken}}, 
             function(error,result)
             {
               if(error){console.log(error);}
@@ -77,8 +77,6 @@ WtBillForwardAPI.accounts = {
               console.log(result.statusCode);
               if(result.statusCode == 200)
               {
-                // Users.insert(new_account);
-                //console.log(result);
                 myFuture.return(result);
               }
             });

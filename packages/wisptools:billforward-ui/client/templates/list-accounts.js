@@ -16,6 +16,11 @@ if (Meteor.isClient){
 		}
   Template.wtListBfAccounts.accountDetails=function(){ return Session.get("accountDetails");}
 
+  Template.wtListBfAccounts.helpers({
+  	displayTable: function(){
+			return Session.get('accountDetails');
+		}
+  });
   Template.registerHelper('arrayify',function(obj){
     result = [];
     for (var key in obj) result.push({name:key,value:obj[key]});

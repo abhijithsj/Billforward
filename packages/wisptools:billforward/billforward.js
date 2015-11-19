@@ -18,7 +18,8 @@ if (Meteor.isServer) {
       //console.log('Test 4');
       var response = WtBillForwardAPI.accounts.create(new_account);
       var account_details = response.data.results[0].profile;
-      var res = WtBillForwardAccounts.collection.accounts.insert({details:account_details});
+      var accId = response.data.results[0].profile.accountID;
+      var res = WtBillForwardAccounts.collection.accounts.insert({"accId":accId,"details":account_details});
       if (res) {
        return response;
       } else {
@@ -29,6 +30,17 @@ if (Meteor.isServer) {
       console.log('Test 5');
       console.log(id);
       var response = WtBillForwardAPI.accounts.update(new_account,id);
+      var new_data = response.data.results[0].profile;
+      //var account_data = WtBillForwardAccounts.collection.accounts.findOne({'details.accountID':id});
+      //var mongo_id = account_data._id;
+      //console.log(mongo_id);
+      //var res = WtBillForwardAccounts.collection.accounts.update({'_id':mongo_id},{'$set':{details:new_data}});
+      var res = WtBillForwardAccounts.collection.accounts.update({'accId':id},{'$set':{details:new_data}});
+      if (res) {
+       return res;
+      } else {
+        return "failed";
+      }
       //var account_details = response.data.results[0].profile;
       //var res = WtBillForwardAccounts.collection.accounts.insert({details:account_details});
     },
@@ -44,11 +56,11 @@ if (Meteor.isServer) {
     },
   "getSingleBillForwardAcount": function(accountId){
       accountId =String(accountId);
-      console.log(accountId);
-      console.log(typeof(accountId));
-      console.log("test");
+      //console.log(accountId);
+      //console.log(typeof(accountId));
+      //console.log("test");
       var single_account_details = WtBillForwardAccounts.collection.accounts.findOne({'details.accountID':accountId});
-      console.log(single_account_details);
+      //console.log(single_account_details);
       return single_account_details;
 
     }
