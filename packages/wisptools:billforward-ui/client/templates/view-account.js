@@ -8,6 +8,9 @@ Template.wtViewBfAccount.helpers({
   address1: function() { return Session.get('profileDetails').addresses[0].addressLine1},
   address2: function() { return Session.get('profileDetails').addresses[0].addressLine2},
   address3: function() { return Session.get('profileDetails').addresses[0].addressLine3},
+  city: function() { return Session.get('profileDetails').addresses[0].city},
+  province: function() { return Session.get('profileDetails').addresses[0].province},
+  postcode: function() { return Session.get('profileDetails').addresses[0].postcode},
   companyname: function() { return Session.get('profileDetails').companyName},
   vatnumber: function() { return Session.get('profileDetails').vatNumber}
 });

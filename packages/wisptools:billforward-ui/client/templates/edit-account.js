@@ -22,7 +22,7 @@ if (Meteor.isClient){
 				{
 				  console.log(response);
 				  Session.set('proileData', response.details);
-				  return response.details;					  
+				  //return response.details;					  
 				}
 				else
 				{
@@ -96,6 +96,9 @@ if (Meteor.isClient){
 		  {
 		    var address3 = document.querySelector("[name='address3']").value;
 		  }
+		  var city = document.querySelector("[name='city']").value;
+		  var province = document.querySelector("[name='province']").value;
+		  var postcode = document.querySelector("[name='postcode']").value;
 			var companyName = document.querySelector("[name='companyName']").value;
 			var taxNo = document.querySelector("[name='taxNo']").value;
 			
@@ -112,10 +115,10 @@ if (Meteor.isClient){
 						"addressLine1": address,
 						"addressLine2": address2,
 						"addressLine3": address3,
-						"city": "",
-						"province": "",
+						"city": city,
+						"province": province,
 						"country": "",
-						"postcode": "",
+						"postcode": postcode,
 						"landline": "",
 						"primaryAddress": true
 					  }],
@@ -145,6 +148,7 @@ if (Meteor.isClient){
 				}
 				else
 				{
+					console.log(response);
 					$.growl({
 							icon: 'glyphicon glyphicon-warning-sign',
 							message: 'Failed to update account. Please try again'

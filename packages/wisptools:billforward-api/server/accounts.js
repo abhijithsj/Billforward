@@ -3,6 +3,7 @@ Future = Npm.require('fibers/future');
 WtBillForwardAPI.config = {
   urlRoot:     Meteor.settings.billforward.urlRoot,
   accessToken: Meteor.settings.billforward.accessToken,
+  version: Meteor.settings.billforward.version,
   "requestLogging": true,
   "responseLogging": false,
   "errorLogging": true
@@ -13,7 +14,7 @@ WtBillForwardAPI.accounts = {
 
     console.log(new_account);
     var myFuture = new Future();
-    Meteor.http.call("POST",WtBillForwardAPI.config.urlRoot, { headers: {"Authorization" : "Bearer "+WtBillForwardAPI.config.accessToken, "Content-Type": "application/json"},data: new_account}, 
+    Meteor.http.call("POST",WtBillForwardAPI.config.urlRoot+WtBillForwardAPI.config.version+"accounts", { headers: {"Authorization" : "Bearer "+WtBillForwardAPI.config.accessToken, "Content-Type": "application/json"},data: new_account}, 
             function(error,result)
             {
               if(error){console.log(error);}
@@ -30,7 +31,7 @@ WtBillForwardAPI.accounts = {
   },
   getAll:function(){
     var myFuture = new Future();
-    Meteor.http.call("GET",WtBillForwardAPI.config.urlRoot+"?&records=100", { headers: {"Authorization" : "Bearer "+WtBillForwardAPI.config.accessToken}}, 
+    Meteor.http.call("GET",WtBillForwardAPI.config.urlRoot+WtBillForwardAPI.config.version+"accounts"+"?&records=100", { headers: {"Authorization" : "Bearer "+WtBillForwardAPI.config.accessToken}}, 
             function(error,result)
             {
               if(error){console.log(error);}
@@ -46,7 +47,7 @@ WtBillForwardAPI.accounts = {
   },
   getSingleAccount:function(accountId){
     var myFuture = new Future();
-    Meteor.http.call("GET",WtBillForwardAPI.config.urlRoot+"/"+accountId, { headers: {"Authorization" : "Bearer "+WtBillForwardAPI.config.accessToken}}, 
+    Meteor.http.call("GET",WtBillForwardAPI.config.urlRoot+WtBillForwardAPI.config.version+"accounts"+"/"+accountId, { headers: {"Authorization" : "Bearer "+WtBillForwardAPI.config.accessToken}}, 
             function(error,result)
             {
               if(error){console.log(error);}
@@ -65,7 +66,7 @@ WtBillForwardAPI.accounts = {
     //console.log(new_account);
     console.log(id);
     var myFuture = new Future();
-    Meteor.http.call("PUT",WtBillForwardAPI.config.urlRoot, { headers: {"Authorization" : "Bearer "+WtBillForwardAPI.config.accessToken, "Content-Type": "application/json"},
+    Meteor.http.call("PUT",WtBillForwardAPI.config.urlRoot+WtBillForwardAPI.config.version+"accounts", { headers: {"Authorization" : "Bearer "+WtBillForwardAPI.config.accessToken, "Content-Type": "application/json"},
       data: { "@type": "account",
               "id": id,
               "profile": new_account

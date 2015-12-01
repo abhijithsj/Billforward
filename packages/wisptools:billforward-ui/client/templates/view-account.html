@@ -4,6 +4,12 @@
 		<div class="container">
 			<form class="form-horizontal">
 				<div class="form-group">
+					<label class="control-label col-sm-4" for="pwd">Company Name :</label>
+					<div class="col-sm-4">          
+						{{companyname}}
+					</div>
+				</div>
+				<div class="form-group">
 					<label class="control-label col-sm-4" for="firstName">First Name :</label>
 					<div class="col-sm-4">
 						{{firstname}}
@@ -49,10 +55,22 @@
               </div>
             {{/if}}
         {{/if}}
-				<div class="form-group">
-					<label class="control-label col-sm-4" for="pwd">Company Name :</label>
+        <div class="form-group">
+					<label class="control-label col-sm-4" for="pwd">City :</label>
 					<div class="col-sm-4">          
-						{{companyname}}
+						{{city}}
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="pwd">State :</label>
+					<div class="col-sm-4">          
+						{{province}}
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="pwd">Zip :</label>
+					<div class="col-sm-4">          
+						{{postcode}}
 					</div>
 				</div>
 				<div class="form-group">

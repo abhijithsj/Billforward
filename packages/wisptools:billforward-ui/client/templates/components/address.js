@@ -24,6 +24,24 @@ if (Meteor.isClient){
 	  	{
 	  		return Session.get('proileData').addresses[0].addressLine3;
 	  	} 
+	  },
+	  city:function(){
+	  	if (Session.get('proileData'))
+	  	{
+	  		return Session.get('profileData').addresses[0].city;
+	  	}
+	  },
+	  province:function(){
+	  	if (Session.get('profileData'))
+	  	{
+	  		return Session.get('proileData').addresses[0].province;
+	  	}
+	  },
+	  postcode:function(){
+	  	if(Session.get('profileData'))
+	  	{
+	  		return Session.get('profileData').addresses[0].postcode;
+	  	}
 	  }
 	});
 	Template.wtBillForwardAddress.events({

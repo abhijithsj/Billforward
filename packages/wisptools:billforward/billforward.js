@@ -33,7 +33,7 @@ if (Meteor.isServer) {
       var new_data = response.data.results[0].profile;
       //var account_data = WtBillForwardAccounts.collection.accounts.findOne({'details.accountID':id});
       //var mongo_id = account_data._id;
-      //console.log(mongo_id);
+      console.log(new_data);
       //var res = WtBillForwardAccounts.collection.accounts.update({'_id':mongo_id},{'$set':{details:new_data}});
       var res = WtBillForwardAccounts.collection.accounts.update({'accId':id},{'$set':{details:new_data}});
       if (res) {
